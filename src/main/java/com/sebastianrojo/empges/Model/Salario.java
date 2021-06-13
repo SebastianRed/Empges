@@ -1,16 +1,39 @@
 package com.sebastianrojo.empges.Model;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Salario
  */
-public class Salario {
+
+@Entity
+@Table(name = "salaries")
+public class Salario implements Serializable {
     
+    @Id
+    @Column(name = "emp_no")
     private Integer numEmp;
+
+    @Column(name = "salary")
     private Integer salario;
+
+    @Column(name = "from_date")
+    @Temporal(TemporalType.DATE)
     private Date fechaComienzo;
+
+    @Column(name = "to_date")
+    @Temporal(TemporalType.DATE)
     private Date fechaTermino;
+
+    private static final long serrialVersionUID = 1L;
 
     public Salario() {
 

@@ -1,20 +1,48 @@
 package com.sebastianrojo.empges.Model;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Empleado
  */
-public class Empleado {
+
+@Entity
+@Table(name = "employees")
+public class Empleado implements Serializable {
     
+    @Id
+    @Column(name = "emp_no")
     private Integer numEmp;
+
+    @Column(name = "birth_date")
+    @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
+
+    @Column(name = "first_name", length = 14)
     private String nombre;
+
+    @Column(name = "last_name", length = 16)
     private String apellido;
+
+    @Column(name = "gender")
     private String genero;
+
+    @Column(name = "hire_date")
+    @Temporal(TemporalType.DATE)
     private Date fechaContrato;
     
+    private static final long serrialVersionUID = 1L;
+
     public Empleado() {
+        
     }
 
     public Empleado(Integer numEmp, Date fechaNacimiento, String nombre, String apellido, String genero, Date fechaContrato) {

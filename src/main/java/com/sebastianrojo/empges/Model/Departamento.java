@@ -1,13 +1,29 @@
 package com.sebastianrojo.empges.Model;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Departamento
  */
-public class Departamento {
 
+@Entity
+@Table(name = "departaments")
+public class Departamento implements Serializable {
+
+    @Id
+    @Column(name = "dept_no")
     private String numDepto;
+
+    @Column(name = "dept_name", length = 40)
     private String nombreDepto;
     
+    private static final long serrialVersionUID = 1L;
+
     public Departamento() {
 
     }
