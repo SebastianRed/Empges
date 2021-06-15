@@ -1,4 +1,4 @@
-package com.sebastianrojo.empges.Model;
+package com.sebastianrojo.empges.Model.Entity;
 
 import java.io.Serializable;
 
