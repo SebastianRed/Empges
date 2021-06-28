@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(240, 240, 240);
+  }
+  
+  header, main {
+    background-color: white;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
