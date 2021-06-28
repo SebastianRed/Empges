@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+  <header th:replace="layout/layout :: header"></header>
+
+  <main class="container shadow">
+    <div class="text-center px-5 pt-3">
+      <h2>Formulario de registro</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+        exercitationem quam enim cumque. Incidunt nemo nisi repellendus cumque
+        quos dignissimos nesciunt labore, aliquid eum quas eos, suscipit, esse
+        optio laborum.
+      </p>
+    </div>
+    
+    <div class="p-5">
+      <h4>Información personal</h4>
+
+      <form th:action="@{/form}" th:object="${empleado}" method="post" class="row pt-2">
+
+        <div class="form-floating col-sm-6">
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:field="*{nombre}"
+            th:errorclass="'form-control alert-danger'" />
+          <label for="nombre" class="form-label">Nombre</label>
+          <small class="form-text text-danger" th:if="@{#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+          <br />
+        </div>
+
+        <div class="form-floating col-sm-6">
+          <input type="text" class="form-control" id="apellido" placeholder="Apellido" th:field="*{apellido}"
+            th:errorclass="'form-control alert-danger'" />
+          <label for="apellido" class="form-label">Apellido</label>
+          <small class="form-text text-danger" th:if="@{#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+          <br />
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="fechaNacimiento" placeholder="Fecha de nacimiento"
+            th:field="*{fechaNacimiento}" th:errorclass="'form-control alert-danger'" />
+          <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+          <small class="form-text text-danger" th:if="@{#fields.hasErrors('fechaNacimiento')}"
+            th:errors="*{fechaNacimiento}"></small>
+          <br />
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="genero" placeholder="Género" th:field="*{genero}"
+            th:errorclass="'form-control alert-danger'" />
+          <label for="genero" class="form-label">Género</label>
+          <small class="form-text text-danger" th:if="@{#fields.hasErrors('genero')}" th:errors="*{genero}"></small>
+          <br />
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="fechaContrato" placeholder="Fecha de contrato"
+            th:field="*{fechaContrato}" th:errorclass="'form-control alert-danger'" />
+          <label for="fechaContrato" class="form-label">Fecha de contrato</label>
+          <small class="form-text text-danger" th:if="@{#fields.hasErrors('fechaContrato')}"
+            th:errors="*{fechaContrato}"></small>
+          <br />
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-lg btn-primary w-100">
+            Ingresar
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
